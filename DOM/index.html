@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {   // DOM이 모두 완성된 상태이므로 DOMContentLoaded 이벤트 코드 X. 이벤트가 발생했을 때 뒤에 있는 콜백함수를 실행하라는 의미
+            // 문서 객체 조작 가능! (1)
+        })
+    </script>
+<body> 
+    <h1>안녕하세요!</h1>
+    <script>
+        // 문서 객체 조작 가능! (2)
+    </script>
+</body>
+</html>
+
+
+
+<!-- 
+스크립트 태그는 최대한 head 태그 안에 넣어야 함
+문서가 모두 만들어진 후에 함수를 실행하라는 코드 → document.addEventListener('DOMContentLoaded', () => {}) 
+-->
