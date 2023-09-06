@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+        // 1. 글자 조작하기
+            const header1 = document.querySelector('#textContent')
+            const header2 = document.querySelector('#innerHTML')
+
+    
+        // 조작?
+        // 1) 값을 추출
+        console.log(header1.textContent)
+        console.log(header2.innerHTML)
+
+        // 2) 값을 넣는다.
+        header1.textContent = '원하는<br>문자열'    // 원하는<br>문자열 (→ 태그를 문자 그대로 출력)
+        header2.innerHTML = '원하는<br>문자열'  // 원하는 - 문자열 (→ <br>태그가 실제로 적용)
+
+        })
+    </script>
+</head>
+<body>
+    <h1 id="textContent">text 속성 기존 문자열</h1>
+    <h1 id="innerHTML">innerHTML 속성 기존 문자열</h1>
+</body>
+</html>

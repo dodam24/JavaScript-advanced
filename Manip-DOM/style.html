@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 3. 스타일 조작하기
+            const divs = document.querySelectorAll('div')
+
+            // 1) 값을 지정
+            divs.forEach((div, key) => {
+                div.style.backgroundColor = `rgb(${key * 25.5}, ${key * 25.5}, ${key * 25.5})`
+                div.style.height = '10px'
+                // div.stlye['background-color']
+
+            // 2) 값을 추출
+            console.log(div.style.height)
+            
+            })
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
