@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 체크박스
+            const checkbox = document.querySelector('input[type=checkbox]')
+            const checkboxResult = document.querySelector('h1#checkbox')
+            checkbox.addEventListener('change', () => {
+                if (checkbox.checked) {
+                    checkboxResult.textContent = '체크'
+                } else {
+                    checkboxResult.textContent = '해제'
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- 체크박스 : 어떤 대상의 true 또는 false -->
+    <input type="checkbox" name="" id=""><br>
+    <h1 id="checkbox"></h1>
+</body>
+</html>

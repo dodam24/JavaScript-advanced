@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 라디오버튼
+            const radios = document.querySelectorAll('input[type=radio]')
+            // radio가 여러 개일 경우, name 속성을 이용해서 구분
+            // const radios = document.querySelectorAll('input[type=radio][name=gender]')
+            
+            const radioResult = document.querySelector('h1#radiobutton')
+            radios.forEach((radio) => {
+                radio.addEventListener('change', () => {
+                    radioResult.textContent = event.currentTarget.value
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- 라디오버튼 : 여러 대상 중에서 하나를 선택 (name 속성 지정 필수! 같은 그룹임을 나타냄) -->
+    <input type="radio" name="gender" id="" value="여성">여성<br>
+    <input type="radio" name="gender" id="" value="남성">남성<br>
+    <input type="radio" name="gender" id="" value="직접 지정">직접 지정<br>
+    <h1 id="radiobutton"></h1>
+</body>
+</html>

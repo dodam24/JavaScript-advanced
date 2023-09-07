@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.querySelector('input')
+            // const button = document.querySelector('button')
+            const p = document.querySelector('p')
+
+            // 버튼을 클릭했을 때
+            // button.addEventListener('click', () => {
+            //     p.textContent = `${Number(input.value) * 2.54}cm로 변환되었습니다.`  // 입력된 inch 단위를 cm 단위로 변환
+            // })
+
+            // keyup : 버튼을 클릭하지 않고, input box에 내용을 입력하자마자 inch를 cm로 변환
+            input.addEventListener('keyup', () => {
+                p.textContent = `${Number(input.value) * 2.54}cm로 변환되었습니다.`
+            })
+
+            // change 이벤트: 입력 양식 전체에 값 입력을 마쳤을 때 발생 (ex. Enter를 누르거나 바깥쪽을 클릭했을 때)
+            input.addEventListener('change', () => {
+                p.textContent = `${Number(input.value) * 2.54}cm로 변환되었습니다.`
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- value 속성 --> <!-- change 이벤트, keydown & keyup & keypress 이벤트 -->
+    <input type="text" name="" id=""> inch<br>
+
+    <!-- <button>계산</button> -->
+    <p></p>
+
+
+    
+    <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+    <!-- <p contenteditable="true">sdf</p> : 글자를 직접적으로 수정할 수 있음 -->
+</body>
+</html>

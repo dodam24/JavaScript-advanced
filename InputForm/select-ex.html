@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // cm를 입력하면 mm, m, inch로 변환
+            const input = document.querySelector('input')
+            const select = document.querySelector('select')
+            const span = document.querySelector('span')
+
+            const handler = () => {
+                const value = Number(input.value)   // 현재값        
+                const selected = select.options[select.options.selectedIndex]   // 선택된 단위
+                span.textContent = value * Number(selected.value)
+            }
+            input.addEventListener('keyup', handler)
+            select.addEventListener('change', handler)  
+        })
+
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="" value="0"> cm =
+    <span>0</span>
+    <select name="" id="">
+        <option value="10">mm</option>
+        <option value="0.01">m</option>
+        <option value="0.393701">inch</option>
+    </select>
+</body>
+</html>
