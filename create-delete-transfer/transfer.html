@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.createElement('h2')
+            header.textContent = '안녕하세요'
+            // const first = document.querySelector('.first')
+            // const second = document.querySelector('.second')
+            const array = [
+                document.querySelector('.first'),
+                document.querySelector('.second'),
+            ]
+
+            // header가 처음에는 first 아래에 붙었다가 2초 후에 second 아래에 붙음
+            first.appendChild(header)   // 문서 객체의 이동은 appendChild 사용
+            setTimeout(() => {
+                second.appendChild(header)
+            }, 2000)
+
+
+            // header가 1초마다 first와 second 내부를 왔다갔다 함
+            const toFirst = () => {
+                first.appendChild(header)
+                setTimeout(toSecond, 1000)
+            }
+            const toSecond = () => {
+                second.appendChild(header)
+                setTimeout(toFirst, 1000)
+            }
+            toFirst()
+
+
+            // fun 함수를 1초마다 반복 (처음에 아무것도 나오지 않다가 1초 후부터 생성 및 이동 → 강제로 fun 함수를 호출해줘야 함)
+            let 카운터 = 0
+            const fun = () => {
+                array[카운터 % 2].appendChild(header)
+                카운터++    // 카운터 = 카운터 + 1
+            }
+            setInterval(fun, 1000)
+            fun()
+        })
+    </script>
+</head>
+<body>
+    <div class="first">
+        <h1>첫 번째 div 태그 내부</h1>
+    </div>
+    <hr>
+    <div class="second">
+        <h1>두 번째 div 태그 내부</h1>
+    </div>
+</body>
+</html>
