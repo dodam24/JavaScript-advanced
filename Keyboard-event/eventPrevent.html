@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const a = document.querySelector('a')
+            a.addEventListener('click', (event) => {
+                event.preventDefault()  // 기본 이벤트 막기
+            })
+            a.addEventListener('contextmenu', (event) => {  // 오른쪽 마우스의 context 메뉴 X
+                // 카페, 블로그 등 불법 공유 방지 목적으로 마우스 오른쪽 클릭 방지
+                event.preventDefault()
+            })
+        })
+    </script>
+</head>
+<body>
+    <a href="http://hanbit.co.kr">링크</a>
+</body>
+</html>

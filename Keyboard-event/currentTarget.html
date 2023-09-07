@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const h1 = document.querySelector('h1')
+            const textarea = document.querySelector('textarea')
+
+            // 다음 세 가지는 모두 동일한 코드임
+            // 이벤트 발생 객체 (1)
+            textarea.addEventListener('keyup', () => {
+                h1.textContent = `글자 수: ${textarea.value.length}`
+            })
+
+            // 이벤트 발생 객체 (2)
+            textarea.addEventListener('keyup', () => {
+                h1.textContent = `글자 수: ${textarea.currentTarget.length}`
+            })
+
+            // 이벤트 발생 객체 (3)
+            textarea.addEventListener('keyup', function () {
+                h1.textContent = `글자 수: ${this.value.length}`
+            })
+        })
+    </script>
+</head>
+<body>
+        <!-- 남은 글자 수 출력하기 -->
+        <h1>글자 수: 0</h1>
+        <textarea></textarea>
+</body>
+</html>
