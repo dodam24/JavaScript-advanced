@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 이벤트 리스너 or 이벤트 핸들러: 이벤트가 실행될 때 호출되는 콜백 함수
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.createElement('h1')
+            document.body.appendChild(header)
+
+            let count = 0
+            header.style.userSelect = 'none'    // 텍스트 영역이 클릭 및 드래그로 선택되지 않도록 설정
+            header.innerText = `클릭 횟수: ${count}`
+            header.addEventListener('click', () => {
+                count++
+                header.innerText = `클릭 횟수: ${count}`
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let counter = 0
+        const listener = () => {
+            header.innerText = `클릭 횟수: ${++counter}`
+        }
+
+        // header 태그
+        const header = document.createElement('h1')
+        header.style.userSelect = 'none'
+        header.innerText = `클릭 횟수: 0`
+
+        // p 태그
+        const p = document.createElement('p')
+        p.style.userSelect = 'none'
+        p.innerText = `이벤트 연결 상태: 해제`
+
+        // connect 버튼
+        const connectButton = document.createElement('button')
+        connectButton.innerText = '이벤트 연결 버튼'
+        connectButton.addEventListener('click', () => {
+            header.addEventListener('click', listener)
+            p.innerText = '이벤트 연결 상태: 연결'
+        })
+
+        // disconnect 버튼
+        const disconnectButton = document.createElement('button')
+        disconnectButton.innerText = '이벤트 해제 버튼'
+        disconnectButton.addEventListener('click', () => {
+            header.removeEventListener('click', listener)
+            p.innerText = '이벤트 연결 상태: 해제'
+        })
+
+        
+        // body에 각 태그 요소를 추가
+        document.body.appendChild(header)
+        document.body.appendChild(connectButton)
+        document.body.appendChild(disconnectButton)
+        document.body.appendChild(p)
+    </script>
+</body>
+</html> 
