@@ -1,0 +1,35 @@
+# JSON
+JavaScript Object Notation
+: 자바스크립트에서 객체를 표현하는 형식으로 데이터를 저장
+
+{
+  "color": "red",
+  "message": "안녕하세요!"
+}
+
+# 규정
+1. 키는 문자열만!
+2. 문자열은 반드시 큰 따옴표!
+
+
+# JSON 객체
+JSON.stringify(): 자바스크립트 객체 → JSON 문자열로 변환
+JSON.parse(): JSON 문자열 → 자바스크립트 객체로 변환
+
+
+# 자바스크립트 객체를 JSON 문자열로 변환
+const object = {
+  color: "red",
+  message: "안녕하세요!"
+}
+
+console.log(JSON.stringify(object))
+  # {"color":"red","message":"안녕하세요!"}
+
+
+# JSON 문자열을 자바스크립트 객체로 다시 변환
+const string = JSON.stringify(object)
+
+const other = JSON.parse(string)
+console.log(other.color)  # red
+console.log(other.message)  # 안녕하세요!
