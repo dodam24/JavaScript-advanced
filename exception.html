@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const h1 = document.querySelector('h1')
+     
+      // 고급 예외 처리
+      try {                              
+        h1.textContent = '변경!'
+    } catch (error) {                         
+        console.log('오류가 발생했습니다!')                    
+      } finally {                             
+      
+      }
+
+      // 예외 객체
+      try {                              
+        h1.textContent = '변경!'
+      } catch (예외_객체) {                         
+        console.log('오류가 발생했습니다!')
+        console.log(예외_객체)
+        console.log(예외_객체.name)     // TypeError
+        console.log(예외_객체.message)  // Cannot set property 'textContent' of null                    
+      }                           
+    
+
+      // 기본 예외 처리
+      if (h1 === null) {
+        console.log('오류가 발생했습니다!')
+      } else {
+        h1.textContent = '변경!'
+      }
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
