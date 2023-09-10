@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function 메일보내기 (발신인, 수신인, 내용) {
+      console.log(`발신인: ${발신인}`)
+      console.log(`수신인: ${수신인}`)
+      console.log(내용)
+    }
+
+    // 객체 매개변수 예외 발생시키기 (매개변수가 잘못 들어올 경우, 예외를 선언!)
+    function isRequired (객체, 속성이름) {
+      if (typeof(객체[속성이름]) === 'undefined') {
+        throw `${속성이름} 매개변수에 문제가 있습니다.`
+      }
+    }
+    
+    function 메일보내기 ({ 발신인, 수신인, 내용 }) {
+      console.log(`발신인: ${발신인}`)
+      console.log(`수신인: ${수신인}`)
+      console.log(내용)
+    }
+
+    메일보내기({
+      발신인: '구름', 
+      수신인: '별', 
+      내용: '간식 줘!'
+    })
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
