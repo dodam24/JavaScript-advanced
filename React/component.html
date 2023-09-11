@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script> <!-- 1. 리액트 core 부분 (핵심) -->
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> <!-- 2. React DOM: 문서 객체 관련 처리 -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> <!-- 3. Babel: 자바스크립트 컴파일러 -->
+
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const 콘텐츠 = '안녕하세요'
+    const 속성 = 'https://placedog.net/400/200'
+    const 스타일 = {
+      backgroundColor: 'yellow'  
+    }
+    const 배열 = [<li>사과</li>, <li>바나나</li>, <li>오렌지</li>]
+    const 핸들러 = (event) => { alert('클릭했습니다') }
+    
+    const 컴포넌트 = <div onClick={핸들러}>
+      <h1 style={스타일}>{콘텐츠}</h1>
+      <img src={속성} />
+      <ul>{배열}</ul>
+    </div>
+  
+    const 컨테이너 = document.querySelector('#root')
+    ReactDOM.render(컴포넌트, 컨테이너)
+  </script> 
+</body>
+</html>
+
+
+<!-- 
+  1. 리액트 환경 설정
+  2. ReactDOM.render()
+  3. 컴포넌트 만들기
+    - 콘텐츠 넣기
+    - 속성 넣기
+    - 스타일 넣기
+  4. 컴포넌트 배열
+  5. 이벤트 연결 
+-->
