@@ -1,0 +1,48 @@
+<script>
+  // 만들어진 Square 객체의 개수를 알고 싶을 때
+  class Square {
+    static count = 0
+    static test () {
+
+    }
+      constructor (length) {
+        Square.count += 1
+    }
+  }
+
+  // 클래스 내부에 static으로 선언한 것과 동일!
+    // Square.count = 0
+    // Square.test = function () {
+
+    // }
+
+
+  console.log(Square.ount)
+  new Square()
+  new Square()
+  new Square()
+  console.log(Square.count)
+</script>
+
+
+
+<script>
+  // private 메서드
+  class Square {
+    // # 클래스 내부에서 식별자 앞에 # 붙이면 → 클래스 내부에서만 사용 가능한 메서드
+    #a
+    #test () {
+      console.log('private test() 메서드입니다')
+    }
+
+    constructor () {
+      this.#test()
+    }
+  }
+
+  new Square()
+
+  // 클래스 외부에서는 #으로 된 속성에 접근 불가
+  const square = new Square()
+  square.#test()
+</script>
